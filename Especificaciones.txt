@@ -13,6 +13,7 @@ Especificadas solicitadas:
 		- Promociones AxB (si el usuario compra A,B,C => D gratis).
 
 Perfiles de usuario:
+    - Nombre del usuario.
 	- Un gusto o preferencia. [Cadena]
 	- Presupuesto (medido en monedas) [Entero]
 	- Tiempo disponible (Cuestionable) [Doble]
