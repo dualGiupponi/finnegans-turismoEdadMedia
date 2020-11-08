@@ -1,17 +1,23 @@
 package storage;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import TurismoPrincipal.Usuario;
 
 public class ListadoUsuarios {
-	List<Usuario> lista;
-	
-	public ListadoUsuarios(List<Usuario> listaUsuarios) {
+	ArrayList<Usuario> lista;
+
+	public ListadoUsuarios(ArrayList<Usuario> listaUsuarios) {
 		this.lista = listaUsuarios;
 	}
-	
-	public List<Usuario> getListado(){
+
+	// CRUD
+	public ArrayList<Usuario> getListado() {
 		return this.lista;
 	}
+
+	public void agregarUsuario(Usuario usuario) {
+		this.lista.add(usuario);
+	}
+
 }
