@@ -83,7 +83,5 @@ public class Atraccion implements IPromAtrac{
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    
+    }    
 }
