@@ -1,13 +1,20 @@
-## Getting Started
+## Proyecto Turismo en la Edad Media
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+El siguiente directorio contiene todo lo referido a los paquetes y programas necesarios para poder ejecutar la resolución del ejercicio solicitado.
+El mismo fue desarrollado por:
+	- Cordoba, Andres.
+	- Giupponi, Dual Miguel
+	- Raffo, Emilio Ariel
 
 ## Folder Structure
 
 The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `src`: Carpeta que contiene los archivos fuentes.
+- `TurismoPrincipal`: Paquete que contiene todo lo referido a los paquetes necesarios para el enunciado.
+- `Main`: Contiene el ciclo principal de Ejecucion.
+- `storage`: Paquete que contiene las clases correspondientes al almacenamiento de la información.
+- `TurismoTerminal`: Paquete que contiene las clases que dan formato a lo visualizado en pantalla.
 
 ## Dependency Management
 
