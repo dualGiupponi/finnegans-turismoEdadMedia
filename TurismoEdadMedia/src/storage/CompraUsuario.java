@@ -99,7 +99,7 @@ public class CompraUsuario {
 			costoTotal += promocion.costo();
 			tiempoTotal += promocion.tiempo();
 			
-			resumen += " - "+promocion.getNombre()+". Costo: "+promocion.costo() + "Tiempo de Visita: " + promocion.tiempo() +"\n";
+			resumen += " - "+promocion.getNombre()+". Costo: "+promocion.costo() + " Monedas. Tiempo de Visita: " + promocion.tiempo() +" horas.\n";
 		}
 		
 		//Listado de atracciones
@@ -108,7 +108,7 @@ public class CompraUsuario {
 			costoTotal += atraccion.costo();
 			tiempoTotal += atraccion.tiempo();
 			
-			resumen += " - "+atraccion.getNombre()+". Costo: "+atraccion.costo() + "Tiempo de Visita: " + atraccion.tiempo() +"\n";
+			resumen += " - "+atraccion.getNombre()+". Costo: "+atraccion.costo() + " monedas. Tiempo de Visita: " + atraccion.tiempo() +" horas\n";
 		}
 		
 		resumen += "Costo total de lo comprado: " + costoTotal + " monedas.\n";

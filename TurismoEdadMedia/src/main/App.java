@@ -3,10 +3,13 @@ package main;
 import java.util.ArrayList;
 
 import TurismoPrincipal.Atraccion;
+import TurismoPrincipal.Usuario;
 import TurismoPrincipal.Enums.ETiposActividades;
+import TurismoPrincipal.Promociones.Promocion;
 import TurismoPrincipal.Promociones.PromocionAbsoluta;
 import TurismoPrincipal.Promociones.PromocionAxB;
 import TurismoPrincipal.Promociones.PromocionPorcentual;
+import storage.CompraUsuario;
 import storage.ListadoAtracciones;
 import storage.ListadoPromociones;
 
@@ -70,6 +73,22 @@ public class App {
 		listaPromociones.agregarPromocion(packPaisajes);
 		
 		listaPromociones.getListaOrdenada();
+		
+		//Creacion de un usuario
+		Usuario usuarioNuevo = new Usuario("Frodo", ETiposActividades.Aventura, 10, 8.0);
+		
+		CompraUsuario compraUsuarioFrodo = new CompraUsuario(usuarioNuevo, listaPromociones, listaAtracciones);
+		
+		ArrayList<Atraccion> listaAtraccionesFrodo = compraUsuarioFrodo.atraccionesParaUsuario();
+		ArrayList<Promocion> listaPromocionesFrodo = compraUsuarioFrodo.promocionesParaUsuario();
+		
+		compraUsuarioFrodo.confirmarCompraAtraccion(BosqueNegro);
+		
+		System.out.println("---------------------------------\n");
+		System.out.println(compraUsuarioFrodo.resumenCompra());
+		
+		ArrayList<Atraccion> listaAtraccionesFrodo2 = compraUsuarioFrodo.atraccionesParaUsuario();
+		ArrayList<Promocion> listaPromocionesFrodo2 = compraUsuarioFrodo.promocionesParaUsuario();
 		
 		System.out.println("Fin");
 	}
