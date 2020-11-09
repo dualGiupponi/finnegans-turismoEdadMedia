@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 import TurismoPrincipal.Atraccion;
 import TurismoPrincipal.Enums.ETiposActividades;
+import TurismoPrincipal.Promociones.PromocionAbsoluta;
+import TurismoPrincipal.Promociones.PromocionAxB;
+import TurismoPrincipal.Promociones.PromocionPorcentual;
 import storage.ListadoAtracciones;
+import storage.ListadoPromociones;
 
 public class App {
 	public static void main(String[] args) {
@@ -32,13 +36,41 @@ public class App {
 		listaAtracciones.agregarAtraccion(Erebor);
 		listaAtracciones.agregarAtraccion(BosqueNegro);
 
-		// Prueba de los algoritmos
+		// Prueba de los algoritmos - Lista de Atracciones
 		ArrayList<Atraccion> listaPrueba = listaAtracciones.getLista(ETiposActividades.Aventura);
 
 		listaPrueba = listaAtracciones.getListaOrdenada();
 
 		listaPrueba = listaAtracciones.getListaOrdenada(ETiposActividades.Aventura);
-
+		
+		//Prueba de los algoritmos - Lista de Promociones.
+		
+		PromocionPorcentual packAventura = new PromocionPorcentual("Pack Aventura", ETiposActividades.Aventura, 20);
+		packAventura.agregarAtraccion(BosqueNegro);
+		packAventura.agregarAtraccion(Mordor);
+		
+		System.out.println("Costo pack aventura: " + packAventura.costo());
+		
+		PromocionAbsoluta packDegustacion = new PromocionAbsoluta("Pack Degustación", ETiposActividades.Degustacion, 36);
+		packDegustacion.agregarAtraccion(Lothlorien);
+		packDegustacion.agregarAtraccion(LaComarca);
+		
+		System.out.println("Costo pack degustación: " + packDegustacion.costo());
+		
+		PromocionAxB packPaisajes = new PromocionAxB("Pack Paisajes", ETiposActividades.Paisaje, Erebor);
+		packPaisajes.agregarAtraccion(MinasTirith);
+		packPaisajes.agregarAtraccion(AbismoDeHelm);
+		packPaisajes.agregarAtraccion(Erebor);
+		
+		System.out.println("Costo pack paisajes: " + packPaisajes.costo());
+		
+		ListadoPromociones listaPromociones = new ListadoPromociones();
+		listaPromociones.agregarPromocion(packAventura);
+		listaPromociones.agregarPromocion(packDegustacion);
+		listaPromociones.agregarPromocion(packPaisajes);
+		
+		listaPromociones.getListaOrdenada();
+		
 		System.out.println("Fin");
 	}
 }

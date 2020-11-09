@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import TurismoPrincipal.Usuario;
 
 public class ListadoUsuarios {
-	ArrayList<Usuario> lista;
+	ArrayList<Usuario> lista = new ArrayList<Usuario>();
 
 	public ListadoUsuarios(ArrayList<Usuario> listaUsuarios) {
 		this.lista = listaUsuarios;
@@ -18,6 +18,12 @@ public class ListadoUsuarios {
 
 	public void agregarUsuario(Usuario usuario) {
 		this.lista.add(usuario);
+	}
+	
+	public void eliminarUsuario(Usuario usuario) {
+		int index = this.lista.indexOf(usuario);
+		if(index != -1)
+			this.lista.remove(index);
 	}
 
 }

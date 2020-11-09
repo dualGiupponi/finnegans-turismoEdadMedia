@@ -8,6 +8,11 @@ import TurismoPrincipal.Enums.ETiposActividades;
 public class PromocionAxB extends Promocion {
 	private Atraccion atraccionDescontada;
 
+	public PromocionAxB(String nombre, ETiposActividades tipoActividad, Atraccion atraccionDescontada) {
+		super(nombre, tipoActividad);
+		this.atraccionDescontada = atraccionDescontada;
+	}
+	
 	public PromocionAxB(String nombre, ArrayList<Atraccion> atraccionesIncluidas, ETiposActividades tipoActividad,
 			Atraccion atraccionDescontada) {
 		super(nombre, atraccionesIncluidas, tipoActividad);

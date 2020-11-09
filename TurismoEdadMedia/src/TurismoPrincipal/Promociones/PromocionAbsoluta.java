@@ -6,19 +6,20 @@ import TurismoPrincipal.Atraccion;
 import TurismoPrincipal.Enums.ETiposActividades;
 
 public class PromocionAbsoluta extends Promocion {
-	private Integer descuentoEnMonedas;
+	private Integer precioPaquete;
 
-	public PromocionAbsoluta(String nombre, ArrayList<Atraccion> atraccionesIncluidas, Integer descuentoEnMonedas,
+	public PromocionAbsoluta(String nombre, ETiposActividades tipoActividad, Integer precioPaquete) {
+		super(nombre,tipoActividad);
+		this.precioPaquete = precioPaquete;
+	}
+	
+	public PromocionAbsoluta(String nombre, ArrayList<Atraccion> atraccionesIncluidas, Integer precioPaquete,
 			ETiposActividades tipoActividad) {
 		super(nombre, atraccionesIncluidas, tipoActividad);
-		this.descuentoEnMonedas = descuentoEnMonedas;
+		this.precioPaquete = precioPaquete;
 	}
 
 	public Integer costo() {
-		Integer precio = 0;
-		for (Atraccion atraccion : super.getAtraccionesIncluidas()) {
-			precio += atraccion.getCostoVisita();
-		}
-		return precio - descuentoEnMonedas;
+		return precioPaquete;
 	}
 }

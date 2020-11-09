@@ -8,9 +8,14 @@ import TurismoPrincipal.Interfaces.IPromAtrac;
 
 public abstract class Promocion implements IPromAtrac {
 	private String nombre;
-	private ArrayList<Atraccion> atraccionesIncluidas;
+	private ArrayList<Atraccion> atraccionesIncluidas = new ArrayList<Atraccion>();
 	private ETiposActividades tipoActividad;
 
+	public Promocion(String nombre, ETiposActividades tipoActividad) {
+		this.setNombre(nombre);
+		this.setTipoActividad(tipoActividad);
+	}
+	
 	public Promocion(String nombre, ArrayList<Atraccion> atraccionesIncluidas, ETiposActividades tipoActividad) {
 		this.setNombre(nombre);
 		this.setAtraccionesIncluidas(atraccionesIncluidas);
@@ -36,6 +41,17 @@ public abstract class Promocion implements IPromAtrac {
 			tiempoTotal += atraccion.getPromedioTiempo();
 		}
 		return tiempoTotal;
+	}
+	
+	public void agregarAtraccion(Atraccion atraccion) {
+		if(atraccion.tipo() == this.getTipoActividad())
+			this.atraccionesIncluidas.add(atraccion);
+	}
+	
+	public void eliminarAtraccion(Atraccion atraccion) {
+		int index = this.getAtraccionesIncluidas().indexOf(atraccion);
+		if(index != -1)
+			this.atraccionesIncluidas.remove(index);
 	}
 
 	// Getters y Setters
