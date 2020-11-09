@@ -35,6 +35,11 @@ public class Atraccion implements IPromAtrac {
 	public Boolean esDisponible() {
 		return (this.cupoVisitante - this.cantidadVisitantes) > 0;
 	}
+	
+	public void agregarVisitante() {
+		Integer cantidad = this.getcantidadVisitantes();
+		this.setcantidadVisitantes(++cantidad);
+	}
 
 	// Getters y Setters
 	public ETiposActividades getTipoAtraccion() {
